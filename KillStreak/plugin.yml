@@ -1,0 +1,4 @@
+ name: MMOMinecraft
+ version: 1.0
+ main: me.biiing.killstreak.KillStreak
+ commands:
