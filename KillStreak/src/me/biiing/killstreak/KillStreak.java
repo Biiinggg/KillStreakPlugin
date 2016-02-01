@@ -2,7 +2,9 @@ package me.biiing.killstreak;
 
 import me.biiing.killstreak.commands.Deaths;
 import me.biiing.killstreak.commands.Kills;
+import me.biiing.killstreak.commands.SetDeaths;
 import me.biiing.killstreak.commands.SetKills;
+import me.biiing.killstreak.commands.SetStreak;
 import me.biiing.killstreak.commands.Streak;
 import me.biiing.killstreak.listeners.PlayerDeath;
 import me.biiing.killstreak.listeners.PlayerJoin;
@@ -31,5 +33,7 @@ public class KillStreak extends JavaPlugin {
 		getCommand("deaths").setExecutor(new Deaths(this));
 		getCommand("streak").setExecutor(new Streak(this));
 		getCommand("setkills").setExecutor(new SetKills(this));
+		getCommand("setdeaths").setExecutor(new SetDeaths(this));
+		getCommand("setstreak").setExecutor(new SetStreak(this));
 	}
 }
