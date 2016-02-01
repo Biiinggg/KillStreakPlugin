@@ -20,11 +20,13 @@ public class Commands implements CommandExecutor {
 		if (sender instanceof Player) {
 			Player p = (Player) sender;
 			if (cmd.getName().equalsIgnoreCase("streak")) {
-//				p.sendMessage("You have " +  + " kills");
+				String uuid = p.getUniqueId().toString();
+				int kills = KillStreak.plugin.getConfig().getInt("Players." + uuid + ".Kills");
+				p.sendMessage("You have " + kills + " Kills");
 				return true;
 			}
 		}
-		return false;
+		return true;
 	}
 
 }
