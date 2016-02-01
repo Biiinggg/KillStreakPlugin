@@ -12,10 +12,22 @@
       description: Shows your current killstreak.
       usage: /<command>
    setkills:
-      description: Shows your current killstreak.
+      description: Edit a players kills.
+      usage: /<command>
+   setdeaths:
+      description: Edit a players deaths.
+      usage: /<command>
+   setstreak:
+      description: Edit a players streak.
       usage: /<command>
 
  permissions:
    killstreak.setkills:
       description: Use to set player kills.
+      default: op
+   killstreak.setdeaths:
+      description: Use to set player deaths.
+      default: op
+   killstreak.setstreak:
+      description: Use to set player streak.
       default: op

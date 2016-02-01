@@ -10,10 +10,10 @@ import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 
-public class SetKills implements CommandExecutor {
+public class SetStreak implements CommandExecutor{
 
 	KillStreak plugin;
-	public SetKills(KillStreak instance) {
+	public SetStreak(KillStreak instance) {
 		this.plugin = instance;
 	}
 	
@@ -21,14 +21,14 @@ public class SetKills implements CommandExecutor {
 	@Override
 	
 	public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args) {
-		if (cmd.getName().equalsIgnoreCase("setkills")) {
-			if (!sender.hasPermission("killstreak.setkills")) {
+		if (cmd.getName().equalsIgnoreCase("setstreak")) {
+			if (!sender.hasPermission("killstreak.setstreak")) {
 				sender.sendMessage(ChatColor.RED + "You are not permitted to do that!");
 				return true;
 			}
 			// /setkills OR /setkills <player>
 			if (args.length == 0 || args.length == 1) {
-				sender.sendMessage(ChatColor.RED + "Usage: /setkills <player> <value>");
+				sender.sendMessage(ChatColor.RED + "Usage: /setstreak <player> <value>");
 				return true;
 			}
 			
@@ -40,8 +40,8 @@ public class SetKills implements CommandExecutor {
 					UUID UUID = plugin.getServer().getOfflinePlayer(args[0]).getUniqueId();
 					String tUUID = UUID.toString(); 
 					if (plugin.getConfig().contains("Players." + tUUID)){ 
-						int newkills = Integer.parseInt(args[1]);
-						plugin.getConfig().set("Players." + tUUID + ".Kills", newkills);
+						int newstreak = Integer.parseInt(args[1]);
+						plugin.getConfig().set("Players." + tUUID + ".Streak", newstreak);
 						plugin.saveConfig();
 					} else {
 						sender.sendMessage(ChatColor.RED + "Player '" + args[0] + "' not found");
@@ -53,8 +53,8 @@ public class SetKills implements CommandExecutor {
 					UUID UUID = plugin.getServer().getPlayer(args[0]).getUniqueId();
 					String tUUID = UUID.toString(); 
 					if (plugin.getConfig().contains("Players." + tUUID)){ 
-						int newkills = Integer.parseInt(args[1]);
-						plugin.getConfig().set("Players." + tUUID + ".Kills", newkills);
+						int newstreak = Integer.parseInt(args[1]);
+						plugin.getConfig().set("Players." + tUUID + ".Streak", newstreak);
 						plugin.saveConfig();
 					} else {
 						sender.sendMessage(ChatColor.RED + "Player '" + args[0] + "' not found");
@@ -66,5 +66,4 @@ public class SetKills implements CommandExecutor {
 		
 		return false;
 	}
-
 }
