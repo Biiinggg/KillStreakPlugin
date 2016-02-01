@@ -7,10 +7,10 @@ import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 
-public class Streak implements CommandExecutor{
+public class Kills implements CommandExecutor{
 
 	KillStreak plugin;
-	public Streak(KillStreak instance) {
+	public Kills(KillStreak instance) {
 		this.plugin = instance;
 	}
 	
@@ -18,7 +18,7 @@ public class Streak implements CommandExecutor{
 	public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args) {
 		if (sender instanceof Player) {
 			Player p = (Player) sender;
-			if (cmd.getName().equalsIgnoreCase("streak")) {
+			if (cmd.getName().equalsIgnoreCase("kills")) {
 				String uuid = p.getUniqueId().toString();
 				int kills = KillStreak.plugin.getConfig().getInt("Players." + uuid + ".Kills");
 				p.sendMessage("You have " + kills + " Kills");

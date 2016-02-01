@@ -20,6 +20,7 @@ public class PlayerJoin implements Listener {
 		String uuid = p.getUniqueId().toString();
 		if(!plugin.getConfig().contains("Players." + uuid)) { 
 			plugin.getConfig().set("Players." + uuid + ".Kills", 0);
+			plugin.getConfig().set("Players." + uuid + ".Deaths", 0);
 			plugin.saveConfig();
 		}
 	}
