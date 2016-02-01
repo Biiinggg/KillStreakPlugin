@@ -1,8 +1,10 @@
 package me.biiing.killstreak;
 
 import me.biiing.killstreak.commands.Deaths;
+import me.biiing.killstreak.commands.HighStreak;
 import me.biiing.killstreak.commands.Kills;
 import me.biiing.killstreak.commands.SetDeaths;
+import me.biiing.killstreak.commands.SetHighStreak;
 import me.biiing.killstreak.commands.SetKills;
 import me.biiing.killstreak.commands.SetStreak;
 import me.biiing.killstreak.commands.Streak;
@@ -35,5 +37,7 @@ public class KillStreak extends JavaPlugin {
 		getCommand("setkills").setExecutor(new SetKills(this));
 		getCommand("setdeaths").setExecutor(new SetDeaths(this));
 		getCommand("setstreak").setExecutor(new SetStreak(this));
+		getCommand("highstreak").setExecutor(new HighStreak(this));
+		getCommand("sethighstreak").setExecutor(new SetHighStreak(this));
 	}
 }

@@ -22,8 +22,15 @@ public class PlayerKill implements Listener {
 				String pUUID = k.getUniqueId().toString();
 				int kills = plugin.getConfig().getInt("Players." + pUUID + ".Kills");
 				int streak = plugin.getConfig().getInt("Players." + pUUID + ".Streak");
+				int highstreak = plugin.getConfig().getInt("Players." + pUUID + ".HighestStreak");
+				int newstreak = streak + 1;
 				plugin.getConfig().set("Players." + pUUID + ".Kills", kills +1);
-				plugin.getConfig().set("Players." + pUUID + ".Streak", streak +1);
+				plugin.getConfig().set("Players." + pUUID + ".Streak", newstreak);
+				if (newstreak > highstreak) {
+					plugin.getConfig().set("Players." + pUUID + ".HighestStreak", newstreak);
+					k.sendMessage("You have a new highest killstreak of " + newstreak);
+					plugin.saveConfig();
+				}
 				plugin.saveConfig();
 			}
 		}

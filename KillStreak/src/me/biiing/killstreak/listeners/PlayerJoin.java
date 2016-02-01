@@ -22,6 +22,7 @@ public class PlayerJoin implements Listener {
 			plugin.getConfig().set("Players." + uuid + ".Kills", 0);
 			plugin.getConfig().set("Players." + uuid + ".Deaths", 0);
 			plugin.getConfig().set("Players." + uuid + ".Streak", 0);
+			plugin.getConfig().set("Players." + uuid + ".HighestStreak", 0);
 			plugin.saveConfig();
 		}
 	}

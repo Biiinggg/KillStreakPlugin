@@ -10,10 +10,10 @@ import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 
-public class SetStreak implements CommandExecutor{
+public class SetHighStreak implements CommandExecutor{
 
 	KillStreak plugin;
-	public SetStreak(KillStreak instance) {
+	public SetHighStreak(KillStreak instance) {
 		this.plugin = instance;
 	}
 	
@@ -21,14 +21,14 @@ public class SetStreak implements CommandExecutor{
 	@Override
 	
 	public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args) {
-		if (cmd.getName().equalsIgnoreCase("setstreak")) {
-			if (!sender.hasPermission("killstreak.setstreak")) {
+		if (cmd.getName().equalsIgnoreCase("sethighstreak")) {
+			if (!sender.hasPermission("killstreak.sethighstreak")) {
 				sender.sendMessage(ChatColor.RED + "You are not permitted to do that!");
 				return true;
 			}
 			// /setkills OR /setkills <player>
 			if (args.length == 0 || args.length == 1) {
-				sender.sendMessage(ChatColor.RED + "Usage: /setstreak <player> <value>");
+				sender.sendMessage(ChatColor.RED + "Usage: /sethighstreak <player> <value>");
 				return true;
 			}
 			
@@ -40,10 +40,10 @@ public class SetStreak implements CommandExecutor{
 					UUID UUID = plugin.getServer().getOfflinePlayer(args[0]).getUniqueId();
 					String tUUID = UUID.toString(); 
 					if (plugin.getConfig().contains("Players." + tUUID)){ 
-						int newstreak = Integer.parseInt(args[1]);
-						plugin.getConfig().set("Players." + tUUID + ".Streak", newstreak);
+						int newhighstreak = Integer.parseInt(args[1]);
+						plugin.getConfig().set("Players." + tUUID + ".HighestStreak", newhighstreak);
 						plugin.saveConfig();
-						sender.sendMessage(ChatColor.GREEN + "You have set " + args[0] + "'s Streak to " + args[1]);
+						sender.sendMessage(ChatColor.GREEN + "You have set " + args[0] + "'s Highest Streak to " + args[1]);
 					} else {
 						sender.sendMessage(ChatColor.RED + "Player '" + args[0] + "' not found");
 					}
@@ -54,10 +54,10 @@ public class SetStreak implements CommandExecutor{
 					UUID UUID = plugin.getServer().getPlayer(args[0]).getUniqueId();
 					String tUUID = UUID.toString(); 
 					if (plugin.getConfig().contains("Players." + tUUID)){ 
-						int newstreak = Integer.parseInt(args[1]);
-						plugin.getConfig().set("Players." + tUUID + ".Streak", newstreak);
+						int newhighstreak = Integer.parseInt(args[1]);
+						plugin.getConfig().set("Players." + tUUID + ".HighestStreak", newhighstreak);
 						plugin.saveConfig();
-						sender.sendMessage(ChatColor.GREEN + "You have set " + args[0] + "'s Streak to " + args[1]);
+						sender.sendMessage(ChatColor.GREEN + "You have set " + args[0] + "'s Highest Streak to " + args[1]);
 					} else {
 						sender.sendMessage(ChatColor.RED + "Player '" + args[0] + "' not found");
 					}
@@ -68,4 +68,5 @@ public class SetStreak implements CommandExecutor{
 		
 		return false;
 	}
+	
 }

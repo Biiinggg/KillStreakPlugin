@@ -20,6 +20,13 @@
    setstreak:
       description: Edit a players streak.
       usage: /<command>
+   highstreak:
+      description: Edit a players streak.
+      usage: /<command>
+   sethighstreak:
+      description: Edit a players streak.
+      usage: /<command>
+
 
  permissions:
    killstreak.setkills:
@@ -30,4 +37,7 @@
       default: op
    killstreak.setstreak:
       description: Use to set player streak.
+      default: op
+   killstreak.sethighstreak:
+      description: Use to set players highest streak.
       default: op
