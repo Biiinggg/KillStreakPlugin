@@ -20,7 +20,7 @@ public class Kills implements CommandExecutor{
 			Player p = (Player) sender;
 			if (cmd.getName().equalsIgnoreCase("kills")) {
 				String uuid = p.getUniqueId().toString();
-				int kills = KillStreak.plugin.getConfig().getInt("Players." + uuid + ".Kills");
+				int kills = plugin.getConfig().getInt("Players." + uuid + ".Kills");
 				p.sendMessage("You have " + kills + " Kills");
 				return true;
 			}

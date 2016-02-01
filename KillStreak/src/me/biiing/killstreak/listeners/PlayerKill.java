@@ -20,7 +20,9 @@ public class PlayerKill implements Listener {
 		if (p instanceof Player) {
 			String pUUID = p.getUniqueId().toString();
 			int kills = plugin.getConfig().getInt("Players." + pUUID + ".Kills");
+			int streak = plugin.getConfig().getInt("Players." + pUUID + ".Streak");
 			plugin.getConfig().set("Players." + pUUID + ".Kills", kills +1);
+			plugin.getConfig().set("Players." + pUUID + ".Streak", streak +1);
 			plugin.saveConfig();
 			p.sendMessage("Win?!");	
 		}

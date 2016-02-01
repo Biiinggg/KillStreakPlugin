@@ -21,6 +21,7 @@ public class PlayerDeath implements Listener {
 			String pUUID = p.getUniqueId().toString();
 			int deaths = plugin.getConfig().getInt("Players." + pUUID + ".Deaths");
 			plugin.getConfig().set("Players." + pUUID + ".Deaths", deaths +1);
+			plugin.getConfig().set("Players." + pUUID + ".Streak", 0);
 			plugin.saveConfig();
 			p.sendMessage("Dead?!");	
 		}

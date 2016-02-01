@@ -8,3 +8,6 @@
    deaths:
       description: Blank description.
       usage: /<command>
+   streak:
+      description: Blank description.
+      usage: /<command>
