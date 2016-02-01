@@ -43,7 +43,7 @@ public class SetHighStreak implements CommandExecutor{
 						int newhighstreak = Integer.parseInt(args[1]);
 						plugin.getConfig().set("Players." + tUUID + ".HighestStreak", newhighstreak);
 						plugin.saveConfig();
-						sender.sendMessage(ChatColor.GREEN + "You have set " + args[0] + "'s Highest Streak to " + args[1]);
+						sender.sendMessage(ChatColor.GOLD + "You have set " + ChatColor.DARK_RED + args[0] + "'s" + ChatColor.GOLD + " highest kill streak to " + ChatColor.DARK_RED + args[1]);
 					} else {
 						sender.sendMessage(ChatColor.RED + "Player '" + args[0] + "' not found");
 					}
@@ -57,7 +57,7 @@ public class SetHighStreak implements CommandExecutor{
 						int newhighstreak = Integer.parseInt(args[1]);
 						plugin.getConfig().set("Players." + tUUID + ".HighestStreak", newhighstreak);
 						plugin.saveConfig();
-						sender.sendMessage(ChatColor.GREEN + "You have set " + args[0] + "'s Highest Streak to " + args[1]);
+						sender.sendMessage(ChatColor.GOLD + "You have set " + ChatColor.DARK_RED + args[0] + "'s" + ChatColor.GOLD + " highest kill streak to " + ChatColor.DARK_RED + args[1]);
 					} else {
 						sender.sendMessage(ChatColor.RED + "Player '" + args[0] + "' not found");
 					}

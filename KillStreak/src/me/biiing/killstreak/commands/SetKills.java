@@ -43,7 +43,7 @@ public class SetKills implements CommandExecutor {
 						int newkills = Integer.parseInt(args[1]);
 						plugin.getConfig().set("Players." + tUUID + ".Kills", newkills);
 						plugin.saveConfig();
-						sender.sendMessage(ChatColor.GREEN + "You have set " + args[0] + "'s Kills to " + args[1]);
+						sender.sendMessage(ChatColor.GOLD + "You have set " + ChatColor.DARK_RED + args[0] + "'s" + ChatColor.GOLD + " kills to " + ChatColor.DARK_RED + args[1]);
 					} else {
 						sender.sendMessage(ChatColor.RED + "Player '" + args[0] + "' not found");
 					}
@@ -57,7 +57,7 @@ public class SetKills implements CommandExecutor {
 						int newkills = Integer.parseInt(args[1]);
 						plugin.getConfig().set("Players." + tUUID + ".Kills", newkills);
 						plugin.saveConfig();
-						sender.sendMessage(ChatColor.GREEN + "You have set " + args[0] + "'s Kills to " + args[1]);
+						sender.sendMessage(ChatColor.GOLD + "You have set " + ChatColor.DARK_RED + args[0] + "'s" + ChatColor.GOLD + " kills to " + ChatColor.DARK_RED + args[1]);
 					} else {
 						sender.sendMessage(ChatColor.RED + "Player '" + args[0] + "' not found");
 					}

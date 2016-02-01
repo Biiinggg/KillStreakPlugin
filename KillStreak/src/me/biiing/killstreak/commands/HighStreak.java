@@ -2,6 +2,7 @@ package me.biiing.killstreak.commands;
 
 import me.biiing.killstreak.KillStreak;
 
+import org.bukkit.ChatColor;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
@@ -21,7 +22,7 @@ public class HighStreak implements CommandExecutor{
 			if (cmd.getName().equalsIgnoreCase("highstreak")) {
 				String uuid = p.getUniqueId().toString();
 				int higheststreak = plugin.getConfig().getInt("Players." + uuid + ".HighestStreak");
-				p.sendMessage("You have " + higheststreak + " HighSreak");
+				p.sendMessage(ChatColor.GOLD + "Your highest kill streak is " + ChatColor.DARK_RED + higheststreak + ChatColor.GOLD + " kills");
 				return true;
 			}
 		}

@@ -2,6 +2,7 @@ package me.biiing.killstreak.commands;
 
 import me.biiing.killstreak.KillStreak;
 
+import org.bukkit.ChatColor;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
@@ -21,7 +22,7 @@ public class Streak implements CommandExecutor {
 			if (cmd.getName().equalsIgnoreCase("streak")) {
 				String uuid = p.getUniqueId().toString();
 				int streak = plugin.getConfig().getInt("Players." + uuid + ".Streak");
-				p.sendMessage("You are on a " + streak + " kill streak");
+				p.sendMessage(ChatColor.GOLD + "You are currently on a " + ChatColor.DARK_RED + streak + ChatColor.GOLD + " kill streak");
 				return true;
 			}
 		}
