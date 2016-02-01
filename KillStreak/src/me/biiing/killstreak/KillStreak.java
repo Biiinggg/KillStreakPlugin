@@ -1,6 +1,6 @@
 package me.biiing.killstreak;
 
-import me.biiing.killstreak.commands.Commands;
+import me.biiing.killstreak.commands.Streak;
 import me.biiing.killstreak.listeners.PlayerJoin;
 import me.biiing.killstreak.listeners.PlayerKill;
 
@@ -21,7 +21,7 @@ public class KillStreak extends JavaPlugin {
 		plugin = this;
 		getServer().getPluginManager().registerEvents(new PlayerJoin(this), this);
 		getServer().getPluginManager().registerEvents(new PlayerKill(this), this);
-		getCommand("streak").setExecutor(new Commands(this));
+		getCommand("streak").setExecutor(new Streak(this));
 		Bukkit.broadcastMessage("KillStreak Plugin loaded successfully!");
 	}
 }

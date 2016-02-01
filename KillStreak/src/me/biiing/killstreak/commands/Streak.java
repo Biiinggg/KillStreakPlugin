@@ -7,14 +7,13 @@ import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 
-public class Commands implements CommandExecutor {
-	
-	@SuppressWarnings("unused")
-	private KillStreak plugin;
-	public Commands(KillStreak plugin) {
-		this.plugin = plugin;
-	}
+public class Streak implements CommandExecutor{
 
+	KillStreak plugin;
+	public Streak(KillStreak instance) {
+		this.plugin = instance;
+	}
+	
 	@Override
 	public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args) {
 		if (sender instanceof Player) {
@@ -28,4 +27,5 @@ public class Commands implements CommandExecutor {
 		}
 		return false;
 	}
+
 }
