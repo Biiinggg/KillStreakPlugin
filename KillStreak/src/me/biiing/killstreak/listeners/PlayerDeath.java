@@ -18,11 +18,13 @@ public class PlayerDeath implements Listener {
 	public void onPlayerDeath(PlayerDeathEvent e) {
 		Player p = e.getEntity();
 		if (p instanceof Player) {
-			String pUUID = p.getUniqueId().toString();
-			int deaths = plugin.getConfig().getInt("Players." + pUUID + ".Deaths");
-			plugin.getConfig().set("Players." + pUUID + ".Deaths", deaths +1);
-			plugin.getConfig().set("Players." + pUUID + ".Streak", 0);
-			plugin.saveConfig();	
+				if (e.getEntity().getKiller() instanceof Player) {
+				String pUUID = p.getUniqueId().toString();
+				int deaths = plugin.getConfig().getInt("Players." + pUUID + ".Deaths");
+				plugin.getConfig().set("Players." + pUUID + ".Deaths", deaths +1);
+				plugin.getConfig().set("Players." + pUUID + ".Streak", 0);
+				plugin.saveConfig();	
+			}
 		}
 	}
 }

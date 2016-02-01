@@ -1,13 +1,21 @@
  name: KillStreak
- version: 1.0
+ version: 1.1
  main: me.biiing.killstreak.KillStreak
  commands:
    kills:
-      description: Blank description.
+      description: Displays how many players you have killed.
       usage: /<command>
    deaths:
-      description: Blank description.
+      description: Displays hwo many times players have killed you.
       usage: /<command>
    streak:
-      description: Blank description.
+      description: Shows your current killstreak.
       usage: /<command>
+   setkills:
+      description: Shows your current killstreak.
+      usage: /<command>
+
+ permissions:
+   killstreak.setkills:
+      description: Use to set player kills.
+      default: op
