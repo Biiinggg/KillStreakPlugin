@@ -12,6 +12,6 @@ public class KillStreak extends JavaPlugin {
 	@Override
 	public void onEnable() {
 		getServer().getPluginManager().registerEvents(new PlayerListener(), this);
-//		getCommand("COMMANDHERE").setExecutor(new Commands(this));
+		getCommand("streak").setExecutor(new Commands());
 	}
 }
