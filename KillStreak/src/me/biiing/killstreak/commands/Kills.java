@@ -58,6 +58,10 @@ public class Kills implements CommandExecutor{
 						return true;
 					}
 				}
+				if (args.length > 1) {
+					sender.sendMessage(ChatColor.RED + "Usage: /kills OR /kills <player>");
+					return true;
+				}
 			}
 		}
 		return false;

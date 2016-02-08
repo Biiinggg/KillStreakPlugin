@@ -60,6 +60,10 @@ public class HighStreak implements CommandExecutor{
 					}
 							
 				}
+				if (args.length > 1) {
+					sender.sendMessage(ChatColor.RED + "Usage: /highstreak OR /highstreak <player>");
+					return true;
+				}
 			}
 		return false;
 	}

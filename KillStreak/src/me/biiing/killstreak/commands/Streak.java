@@ -61,6 +61,10 @@ public class Streak implements CommandExecutor {
 					}
 				}
 			}
+			if (args.length > 1) {
+				sender.sendMessage(ChatColor.RED + "Usage: /streak OR /streak <player>");
+				return true;
+			}
 		}
 		return false;
 	}

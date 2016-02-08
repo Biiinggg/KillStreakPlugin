@@ -59,6 +59,10 @@ public class Deaths implements CommandExecutor{
 					return true;
 				}
 			}
+			if (args.length > 1) {
+				sender.sendMessage(ChatColor.RED + "Usage: /deaths OR /deaths <player>");
+				return true;
+			}
 		}
 		return false;
 	}

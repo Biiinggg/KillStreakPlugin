@@ -27,7 +27,7 @@ public class SetHighStreak implements CommandExecutor{
 				return true;
 			}
 			// /setkills OR /setkills <player>
-			if (args.length == 0 || args.length == 1) {
+			if (args.length == 0 || args.length == 1 || args.length > 2) {
 				sender.sendMessage(ChatColor.RED + "Usage: /sethighstreak <player> <value>");
 				return true;
 			}
