@@ -29,14 +29,16 @@ public class Kills implements CommandExecutor{
 					return true;
 				}
 				if (args.length == 1) {
+					@SuppressWarnings("deprecation")
 					Player t = plugin.getServer().getPlayer(args[0]);
 					// If player is Offline
 					if (t == null) {
+						@SuppressWarnings("deprecation")
 						UUID UUID = plugin.getServer().getOfflinePlayer(args[0]).getUniqueId();
 						String tUUID = UUID.toString(); 
 						if (plugin.getConfig().contains("Players." + tUUID)){
 							int kills = plugin.getConfig().getInt("Players." + tUUID + ".Kills");
-							sender.sendMessage(ChatColor.GOLD + "" + kills);
+							sender.sendMessage(ChatColor.DARK_RED + args[0] + ChatColor.GOLD + " has " + ChatColor.DARK_RED + kills + ChatColor.GOLD + " kills" );
 						} else {
 							sender.sendMessage(ChatColor.RED + "Player '" + args[0] + "' not found");
 						}
@@ -44,19 +46,20 @@ public class Kills implements CommandExecutor{
 					} 
 					// If Player is Online
 					if (t.isOnline()) {
+						@SuppressWarnings("deprecation")
 						UUID UUID = plugin.getServer().getPlayer(args[0]).getUniqueId();
 						String tUUID = UUID.toString(); 
 						if (plugin.getConfig().contains("Players." + tUUID)){ 
 							int kills = plugin.getConfig().getInt("Players." + tUUID + ".Kills");
-							sender.sendMessage(ChatColor.GOLD + "" + kills);
+							sender.sendMessage(ChatColor.DARK_RED + args[0] + ChatColor.GOLD + " has " + ChatColor.DARK_RED + kills + ChatColor.GOLD + " kills" );
 						} else {
 							sender.sendMessage(ChatColor.RED + "Player '" + args[0] + "' not found");
 						}
 						return true;
+					}
 				}
 			}
 		}
-	}
 		return false;
 	}
 
